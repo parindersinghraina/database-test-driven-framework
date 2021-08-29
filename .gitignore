@@ -12,11 +12,6 @@
 /bin/
 
 # output files
-/.allure/
-/allure-report/
-/allure-results/
-/target/
-/test-output/
 
 # Mac recovery files
 .DS_Store
