@@ -1,0 +1,12 @@
+<suite name="dev" verbose="1" parallel="methods" thread-count="1">
+    <test name="dev">
+        <groups>
+            <run>
+                <include name="dev" />
+            </run>
+        </groups>
+        <packages>
+            <package name="com.travelclick.qa.tests.*" />
+        </packages>
+    </test>
+</suite>
