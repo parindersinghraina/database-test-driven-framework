@@ -30,12 +30,14 @@ dependencies {
     testImplementation "com.fasterxml.jackson.core:jackson-databind:2.12.3"
     testImplementation "com.googlecode.json-simple:json-simple:1.1.1"
     testImplementation "com.google.code.gson:gson:2.8.6"
+    testImplementation "commons-io:commons-io:2.9.0"
+    testImplementation "org.apache.tika:tika-core:1.26"
 }
 
 test {
     useTestNG() {
         useDefaultListeners = false // report generation delegated to TestNG library
-        suites 'src/test/resources/suites/testng.xml' // defaults to 'all' suite
+        suites 'src/test/resources/suites/all.xml' // defaults to 'all' suite
     }
 
     testLogging {

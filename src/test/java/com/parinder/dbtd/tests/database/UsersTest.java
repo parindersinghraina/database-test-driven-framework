@@ -1,12 +1,11 @@
 package com.parinder.dbtd.tests.database;
 
+import com.google.gson.JsonObject;
 import com.parinder.dbtd.adapters.model.Users;
-import com.parinder.dbtd.helper.ConversionHelper;
-import com.parinder.dbtd.helper.JsonHelper;
-import com.parinder.dbtd.helper.QueryHelper;
-import com.parinder.dbtd.helper.ResultSetHelper;
+import com.parinder.dbtd.helper.*;
 import com.parinder.dbtd.tests.BaseTest;
 import io.qameta.allure.Description;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.sql.Connection;
@@ -35,5 +34,10 @@ public class UsersTest extends BaseTest {
 
         // CONVERT JAVA OBJECT TO JSON OBJECT AND CREATE JSON FIXTURE
         ConversionHelper.convertRecordToJsonObjectAndCreateJsonFile(recordSet, jsonFilePath);
+
+        // VALIDATION
+        JsonObject jsonObject = DataFixtureHelper.getJsonDocument("fixtures/get-users.json");
+
+        Assert.assertTrue(jsonObject.toString().contains("Parinder"));
     }
 }
