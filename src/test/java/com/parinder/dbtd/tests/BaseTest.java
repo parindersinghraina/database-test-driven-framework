@@ -4,11 +4,17 @@ import com.parinder.dbtd.configuration.Config;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class BaseTest {
 
     protected Config config;
+
+    @BeforeMethod(alwaysRun = true)
+    public void setup() throws IOException {
+        this.config = new Config();
+    }
 
     @BeforeMethod(alwaysRun = true)
     public Connection connectionSetup() throws Exception {

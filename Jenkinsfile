@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    }
     parameters {
         choice(
           choices: ['all'],
@@ -32,8 +31,8 @@ pipeline {
                     def props = "BRANCH=${env.BRANCH_NAME}"
                     props += "\nBUILD=${env.BUILD_NUMBER}"
                     props += "\nSUITE=${env.AUTOMATED_TEST_SUITE}"
-                    writeFile(file: "allure-results/environment.properties", text: props, encoding: "UTF-8")
-                    allure results: [[path: 'allure-results']]
+                    writeFile(file: "build/allure-results/environment.properties", text: props, encoding: "UTF-8")
+                    allure results: [[path: 'build/allure-results']]
                 }
         }
     }
