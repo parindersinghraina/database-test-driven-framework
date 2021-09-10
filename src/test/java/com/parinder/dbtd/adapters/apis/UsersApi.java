@@ -15,7 +15,7 @@ public class UsersApi extends BaseApi{
 
     @Step("Submit GET '/api/v1/users'")
     public Response getUsers() {
-        return given()
+        return given().spec(this.spec)
                 .header("Content-Type", "application/json")
                 .get("/api/v1/users");
     }
