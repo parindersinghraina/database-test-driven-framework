@@ -32,7 +32,7 @@ pipeline {
                     props += "\nBUILD=${env.BUILD_NUMBER}"
                     props += "\nSUITE=${env.AUTOMATED_TEST_SUITE}"
                     writeFile(file: "allure-results/environment.properties", text: props, encoding: "UTF-8")
-                    allure results: [[path: 'allure-results']]
+                    allure results: [[path: 'allure-results/']]
                 }
         }
     }
