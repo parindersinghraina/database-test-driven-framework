@@ -27,7 +27,7 @@ pipeline {
         always {
                 echo "Changing permissions on build folder, writing properties file, and generating Allure report"
                 script {
-                    sh 'chmod -R 777 build'
+                    sh 'chmod -R 777 allure-results'
                     def props = "BRANCH=${env.BRANCH_NAME}"
                     props += "\nBUILD=${env.BUILD_NUMBER}"
                     props += "\nSUITE=${env.AUTOMATED_TEST_SUITE}"
