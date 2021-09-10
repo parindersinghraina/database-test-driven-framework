@@ -1,0 +1,7 @@
+<suite name="all" verbose="1" parallel="methods" thread-count="1">
+    <test name="all">
+        <packages>
+            <package name="com.parinder.dbtd.tests.*" />
+        </packages>
+    </test>
+</suite>
