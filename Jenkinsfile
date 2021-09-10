@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    }
     parameters {
         choice(
           choices: ['all'],
